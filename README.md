@@ -80,6 +80,7 @@ curl http://5c544a2ea659410014eeeb2c.mockapi.io/api/v1/records
 
 3. 浏览器自带fetch方法
  
+参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
 ```s
 fetch('http://localhost:3004/records ')
   .then(response => response.json())

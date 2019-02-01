@@ -29,7 +29,7 @@ class Records extends Component {
         </thead>
         <tbody>
           {/* <Record/> */}
-          {this.state.records.map((record) => <Record key ={record.id} record={record} / >)}
+          {this.state.records.map((record) => <Record key ={record.id} {...record} / >)}
         </tbody>
         </table>
 
