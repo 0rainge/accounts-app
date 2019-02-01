@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Record from './Record';
-import $ from 'jquery';
+import {getJSON} from 'jquery';
+import axios from 'axios';
  
 
 class Records extends Component {
@@ -18,16 +19,16 @@ class Records extends Component {
   }
 
   componentDidMount(){
-    $.getJSON("http://5c544a2ea659410014eeeb2c.mockapi.io/api/v1/records").then(
+    axios.get("http://5c544a2ea659410014eeeb2c.mockapi.io/api/v1/records").then(
       response => this.setState({
         isLoaded:true,
-        records: response
+        records: response.data
       }),
+
+    ).catch(
       err => this.setState({
         isLoaded:true,
         err//相当于err:err
-        
-        
       })
     )
   }
@@ -36,33 +37,31 @@ class Records extends Component {
   render() {
     const {err,isLoaded,records} = this.state;
     if(err)
-      return <div>啊偶出现了bug！{err.responseText}</div>;
+      return <div>啊偶出现了bug！{err.message}</div>;
     else if(!isLoaded){
       return <div>正在加载大猫咪的小金库</div>
     }else{
 
+      return (
+        <div >
+          <h2>大猫咪的小账本</h2>
+          <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事项</th>
+              <th>金额</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* <Record/> */}
+            {records.map((record) => <Record key ={record.id} {...record} / >)}
+          </tbody>
+          </table>
+  
+        </div>
+      );
     }
-
-
-    return (
-      <div >
-        <h2>大猫咪的小账本</h2>
-        <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>日期</th>
-            <th>事项</th>
-            <th>金额</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* <Record/> */}
-          {this.state.records.map((record) => <Record key ={record.id} {...record} / >)}
-        </tbody>
-        </table>
-
-      </div>
-    );
   }
 }
 
