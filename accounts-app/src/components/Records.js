@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Record from './Record';
-import {getJSON} from 'jquery';
+// import {getJSON} from 'jquery';
 import axios from 'axios';
+
+
  
 
 class Records extends Component {
@@ -19,7 +21,7 @@ class Records extends Component {
   }
 
   componentDidMount(){
-    axios.get("http://5c544a2ea659410014eeeb2c.mockapi.io/api/v1/records").then(
+    axios.get("http://localhost:3004/records").then(
       response => this.setState({
         isLoaded:true,
         records: response.data
