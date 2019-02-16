@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Record from './Record';
 // import {getJSON} from 'jquery';
-import axios from 'axios';
+
+import * as RecordsAPI from '../utils/RecordsAPI'
 
 
  
@@ -21,7 +22,7 @@ class Records extends Component {
   }
 
   componentDidMount(){
-    axios.get("http://localhost:3004/records").then(
+    RecordsAPI.getAll().then(
       response => this.setState({
         isLoaded:true,
         records: response.data

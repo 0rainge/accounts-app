@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
-class Records extends Component {
+export default class Records extends Component {
   render() {
     return (
           <tr>
@@ -15,7 +15,6 @@ class Records extends Component {
   }
 }
 
-export default Records;
 
 Records.propTypes = {
   id: PropTypes.number,
