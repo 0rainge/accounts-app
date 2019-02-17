@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import RecordForm from './RecordsForm';
 
 
-export default class Records extends Component {
+export default class Record extends Component {
   render() {
     return (
           <tr>
@@ -16,7 +17,7 @@ export default class Records extends Component {
 }
 
 
-Records.propTypes = {
+Record.propTypes = {
   id: PropTypes.number,
   date: PropTypes.string,
   title: PropTypes.string,

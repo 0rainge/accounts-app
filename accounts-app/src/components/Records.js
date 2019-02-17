@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Record from './Record';
 // import {getJSON} from 'jquery';
 
-import * as RecordsAPI from '../utils/RecordsAPI'
+import * as RecordsAPI from '../utils/RecordsAPI';
+import RecordForm from './RecordsForm';
 
 
  
@@ -39,15 +40,15 @@ class Records extends Component {
 
   render() {
     const {err,isLoaded,records} = this.state;
+    let recordsComponent;
     if(err)
-      return <div>啊偶出现了bug！{err.message}</div>;
+      recordsComponent = <div>啊偶出现了bug！{err.message}</div>;
     else if(!isLoaded){
-      return <div>正在加载大猫咪的小金库</div>
+      recordsComponent = <div>正在加载大猫咪的小金库</div>
     }else{
 
-      return (
-        <div >
-          <h2>大猫咪的小账本</h2>
+      recordsComponent = (
+
           <table className="table table-bordered">
           <thead>
             <tr>
@@ -62,9 +63,15 @@ class Records extends Component {
           </tbody>
           </table>
   
-        </div>
       );
     }
+    return(
+      <div >
+          <h2>大猫咪的小账本</h2>
+          <RecordForm />
+          {recordsComponent}
+      </div>
+    )
   }
 }
 
