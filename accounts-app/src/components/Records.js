@@ -64,6 +64,7 @@ class Records extends Component {
               <th>日期</th>
               <th>事项</th>
               <th>金额</th>
+              <th>操作</th>
             </tr>
           </thead>
           <tbody>
