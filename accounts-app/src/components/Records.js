@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Record from './Record';
 // import {getJSON} from 'jquery';
-
 import * as RecordsAPI from '../utils/RecordsAPI';
 import RecordForm from './RecordsForm';
 
@@ -37,6 +36,16 @@ class Records extends Component {
     )
   }
 
+  addRecord(record){
+    this.setState({
+      err:null,
+      isLoaded:true,
+      records:
+        [...this.state.records,
+        record]
+    })
+  }
+
 
   render() {
     const {err,isLoaded,records} = this.state;
@@ -68,7 +77,7 @@ class Records extends Component {
     return(
       <div >
           <h2>大猫咪的小账本</h2>
-          <RecordForm />
+          <RecordForm handleNewRecord={this.addRecord.bind(this)} />
           {recordsComponent}
       </div>
     )

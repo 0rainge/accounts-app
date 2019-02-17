@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RecordForm from './RecordsForm';
+// import RecordForm from './RecordsForm';
 
 
 export default class Record extends Component {
