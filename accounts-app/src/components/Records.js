@@ -3,6 +3,7 @@ import Record from './Record';
 // import {getJSON} from 'jquery';
 import * as RecordsAPI from '../utils/RecordsAPI';
 import RecordForm from './RecordsForm';
+import AmountBox from './AmountBox'
 
 
  
@@ -111,6 +112,11 @@ class Records extends Component {
     return(
       <div >
           <h2>大猫咪的小账本</h2>
+          <div className="row mb-3">
+            <AmountBox text="收入" type = "success"/>
+            <AmountBox text="支出" type = "danger"/>
+            <AmountBox text="总金额" type = "info"/>
+          </div>
           <RecordForm handleNewRecord={this.addRecord.bind(this)} />
           {recordsComponent}
       </div>
