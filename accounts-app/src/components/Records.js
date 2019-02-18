@@ -66,13 +66,38 @@ class Records extends Component {
 
   deleteRecord(record){
     const recordIndex = this.state.records.indexOf(record);
-    const newRecords = this.state.records.filter((item,index) =>index!=recordIndex);
+    const newRecords = this.state.records.filter((item,index) =>index!==recordIndex);
     this.setState({
       records:newRecords
     })
 
   }
 
+  credits(){
+    let credits = this.state.records.filter((record)=>{
+      return record.amount>=0;
+    })
+
+    return credits.reduce((prev,curr) =>{
+      return prev + Number.parseInt(curr.amount,0)
+    },0)
+
+  }
+
+
+  debits(){
+    let credits = this.state.records.filter((record)=>{
+      return record.amount<0;
+    })
+
+    return credits.reduce((prev,curr) =>{
+      return prev + Number.parseInt(curr.amount,0)
+    },0)
+  }
+
+  balance(){
+    return this.credits()+this.debits();
+  }
 
   render() {
     const {err,isLoaded,records} = this.state;
@@ -113,9 +138,9 @@ class Records extends Component {
       <div >
           <h2>大猫咪的小账本</h2>
           <div className="row mb-3">
-            <AmountBox text="收入" type = "success"/>
-            <AmountBox text="支出" type = "danger"/>
-            <AmountBox text="总金额" type = "info"/>
+            <AmountBox text="收入" type = "success" amount={this.credits()}/>
+            <AmountBox text="支出" type = "danger" amount={this.debits()}/>
+            <AmountBox text="总金额" type = "info" amount={this.balance()}/>
           </div>
           <RecordForm handleNewRecord={this.addRecord.bind(this)} />
           {recordsComponent}

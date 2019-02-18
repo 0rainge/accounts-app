@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AmountBox = ({text,type}) =>{
+const AmountBox = ({text,type,amount}) =>{
     return(
         <div className = 'col'>
             <div className="card">
@@ -8,7 +8,7 @@ const AmountBox = ({text,type}) =>{
                     {text}
                 </div>
                 <div className="card-body">
-                    999
+                    {amount}
                 </div>
             </div>
         </div>
