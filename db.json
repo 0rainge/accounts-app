@@ -1,10 +1,10 @@
 {
   "records": [
     {
-      "id": 1,
-      "date": "2019-02-01",
-      "title": "title 1",
-      "amount": 91
+      "date": "dd",
+      "title": "2",
+      "amount": 201222211000,
+      "id": 1
     },
     {
       "id": 2,
@@ -31,9 +31,6 @@
       "amount": 0.5
     },
     {
-      "date": "aaaaaaa",
-      "title": "a",
-      "amount": "fff",
       "id": 6
     },
     {
