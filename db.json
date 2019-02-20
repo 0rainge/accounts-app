@@ -1,27 +1,27 @@
 {
   "records": [
     {
-      "date": "aaaaaaa",
-      "title": "d3333",
-      "amount": 1,
+      "date": "2019-02-18",
+      "title": "吃饭",
+      "amount": -20,
       "id": 7
     },
     {
-      "date": "aaaaaaa",
-      "title": "a",
-      "amount": 3,
+      "date": "2019-02-18",
+      "title": "坐公交",
+      "amount": -2,
       "id": 8
     },
     {
-      "date": "aaaaaaa",
-      "title": "d3333",
-      "amount": 6,
+      "date": "2019-02-18",
+      "title": "中彩票",
+      "amount": 5,
       "id": 9
     },
     {
-      "date": "dafmlk",
-      "title": "damlk",
-      "amount": 11111,
+      "date": "2019-02-18",
+      "title": "工作输入",
+      "amount": 150,
       "id": 10
     }
   ]

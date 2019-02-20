@@ -102,6 +102,24 @@ class Records extends Component {
   render() {
     const {err,isLoaded,records} = this.state;
     let recordsComponent;
+    let mystyle={
+      textAlign:'center',
+      // position:'relative'
+      // width:"80%"
+    };
+    let centerStyle={
+      // display:'inline-block'
+      // marginLeft:'auto',
+      // marginRight:'auto'
+      // margin:'0 0'
+      position:'absolute',
+      margin:'auto',
+      left:'0',
+      right:'0',
+      textAlign:'center',
+      backgroundColor:"red",
+      // float:'center'
+    }
     if(err)
       recordsComponent = <div>啊偶出现了bug！{err.message}</div>;
     else if(!isLoaded){
@@ -135,15 +153,20 @@ class Records extends Component {
       );
     }
     return(
-      <div >
+      <div style = {mystyle}>
           <h2>大猫咪的小账本</h2>
           <div className="row mb-3">
             <AmountBox text="收入" type = "success" amount={this.credits()}/>
             <AmountBox text="支出" type = "danger" amount={this.debits()}/>
             <AmountBox text="总金额" type = "info" amount={this.balance()}/>
           </div>
-          <RecordForm handleNewRecord={this.addRecord.bind(this)} />
-          {recordsComponent}
+          <div style = {centerStyle}>
+          {/* <div> */}
+            <RecordForm handleNewRecord={this.addRecord.bind(this)} /> 
+          </div>
+          <div>
+            {recordsComponent}
+          </div>
       </div>
     )
   }

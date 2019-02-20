@@ -14,7 +14,6 @@ export default class RecordForm extends Component {
         }
 
     }
-
     valid(){
         return this.state.title && this.state.date && this.state.amount;
     }
@@ -57,9 +56,18 @@ export default class RecordForm extends Component {
         )
     }
 
+
     render() {
+        let formStyle ={
+            // position:'absolute', 
+            // left:'50%', 
+            // top:'50%', 
+            // transform:'translate(-50%)'
+            margin: '0 auto',
+            width:'50%'
+        }
         return (
-            <form className = "form-inline mb-3" onSubmit = {this.handleSubmit.bind(this)}>
+            <form className = "form-inline mb-3"  style ={formStyle} onSubmit = {this.handleSubmit.bind(this)}>
                 <div className="form-group mr-1" >
                     <input type="text" className = "form-controll" placeholder = "日期" name = "date" value = {this.state.date} onChange = {this.handleChange.bind(this)}/>
                 </div>
