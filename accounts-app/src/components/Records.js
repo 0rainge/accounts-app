@@ -28,7 +28,6 @@ class Records extends Component {
         isLoaded:true,
         records: response.data
       }),
-
     ).catch(
       err => this.setState({
         isLoaded:true,
@@ -108,17 +107,7 @@ class Records extends Component {
       // width:"80%"
     };
     let centerStyle={
-      // display:'inline-block'
-      // marginLeft:'auto',
-      // marginRight:'auto'
-      // margin:'0 0'
-      position:'absolute',
-      margin:'auto',
-      left:'0',
-      right:'0',
-      textAlign:'center',
-      backgroundColor:"red",
-      // float:'center'
+      backgroundColor:"#fff35a",
     }
     if(err)
       recordsComponent = <div>啊偶出现了bug！{err.message}</div>;
