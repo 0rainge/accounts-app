@@ -127,7 +127,7 @@ class Records extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* <Record/> */}
+            
             {records.map((record) => (
               <Record 
               key ={record.id} 
