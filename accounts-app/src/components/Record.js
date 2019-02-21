@@ -56,7 +56,7 @@ export default class Record extends Component {
             <td>{this.props.record.title}</td>
             <td>{this.props.record.amount}</td>
             <td>
-              <button className="btn btn-info mr-1" onClick={this.handleToggle.bind(this)}>编辑</button>
+              <button className="btn btn-info mr-1" onClick={this.handleToggle.bind(this)}>做假账</button>
               <button className="btn btn-danger"onClick={this.handleDelete.bind(this)}>删除</button>
             </td>
           </tr>
@@ -71,7 +71,7 @@ export default class Record extends Component {
       <td><input type="text" className="form-control" defaultValue = {this.props.record.title} ref = "title"/></td>
       <td><input type="text" className="form-control" defaultValue = {this.props.record.amount} ref = "amount"/></td>
       <td>
-        <button className="btn btn-info mr-1" onClick={this.handleEdit.bind(this)}>更新</button>
+        <button className="btn btn-info mr-1" onClick={this.handleEdit.bind(this)}>更新假账</button>
         <button className="btn btn-danger" onClick={this.handleToggle.bind(this)}>取消</button>
       </td>
     </tr>

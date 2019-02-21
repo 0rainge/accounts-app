@@ -107,7 +107,7 @@ class Records extends Component {
       // width:"80%"
     };
     let centerStyle={
-      backgroundColor:"#fff35a",
+      backgroundColor:"#313639",
     }
     if(err)
       recordsComponent = <div>啊偶出现了bug！{err.message}</div>;
@@ -143,7 +143,7 @@ class Records extends Component {
     }
     return(
       <div style = {mystyle}>
-          <h2>大猫咪的小账本</h2>
+          <h2>可以做假账的财务管理系统</h2>
           <div className="row mb-3">
             <AmountBox text="收入" type = "success" amount={this.credits()}/>
             <AmountBox text="支出" type = "danger" amount={this.debits()}/>
