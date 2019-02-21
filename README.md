@@ -194,7 +194,7 @@ fetch('http://localhost:3004/records ')
 只有当网络故障或请求阻止才会被标记为reject
 ```
 
-#### 5. mock模拟发送数据
+#### 6. mock模拟发送数据
 
 1. 向远程API发送数据
 ![image](https://github.com/0rainge/accounts-app/blob/master/imgDoc/postR.png?raw=true)
@@ -202,7 +202,7 @@ fetch('http://localhost:3004/records ')
 2. 向本地json server发送数据
 ![image](https://github.com/0rainge/accounts-app/blob/master/imgDoc/postL.png?raw=true)
 
-#### 6. 父组件向字组件传递数据
+#### 7. 父组件向字组件传递数据
 
 通过map枚举,把值赋给另一个组件：有几条数据，调用几次组件，组件的内容通过父组件传入
 
@@ -227,7 +227,7 @@ fetch('http://localhost:3004/records ')
         
 
 ```
-#### 7. 扩展运算法: ...
+#### 8. 扩展运算法: ...
 
 扩展运算符用于扩展一个哈希或数组,ES6的写法
 
@@ -246,7 +246,7 @@ const c = [{"a":1},{"b":2},{"c":3}]
 ```
 
 
-#### 8. 组件分析：
+#### 9. 组件分析：
 
 组件：可以看成是一个函数/类，可以继承自Component，也可以自定义不继承
 
@@ -261,13 +261,13 @@ const c = [{"a":1},{"b":2},{"c":3}]
 6. 导出组件：export default + 组件名（或者在定义组件时就导出）
 
 
-#### 9. ES6解构赋值
+#### 10. ES6解构赋值
 
 ```
 const {err,isLoaded,records} = this.state
 ```
 
-#### 10. 库的按需导入
+#### 11. 库的按需导入
 
 ```
 import {getJson} from 'jquery'
@@ -275,17 +275,17 @@ import {getJson} from 'jquery'
 ```
 到时候就直接用getJson方法
 
-#### 11. 静态类型的检查机制
+#### 12. 静态类型的检查机制
 
 导入静态类型检查库：propTypes，设置组件的proptypes对象，key是state/porps；value是proptypes的数据类型
 
-#### 12. 使用环境变量代替API地址
+#### 13. 使用环境变量代替API地址
 
 重构API变量，放入统一的文件中，把环境变量（URL）单独放入一个文件中
 
 环境变量：‘REACT_APP_’开头，‘’
 
-#### 13. bootstrap常用类名
+#### 14. bootstrap常用类名
 
 外边距/内填充
 1. 第一位 
@@ -312,7 +312,7 @@ import {getJson} from 'jquery'
 
 https://v4.bootcss.com/docs/4.0/getting-started/introduction/
 
-#### 14. 组件的监听方法：on+动作
+#### 15. 组件的监听方法：on+动作
 
 1. 创建事件句柄:自定义方法重写形如：handleAction(event)
 
@@ -325,18 +325,18 @@ https://v4.bootcss.com/docs/4.0/getting-started/introduction/
 onAction = this.handleAction.bind(this)
 ```
 
-#### 15. 阻止默认事件
+#### 16. 阻止默认事件
 
 ```js
 event.preventDefault();
 ```
 
-#### 16. 发送数据的数据类型
+#### 17. 发送数据的数据类型
 
 把字符串类型转换为整形
 xx:Number.parseInt(this.state.xx,0)
 
-#### 17. 父组件向子组件传值/函数
+#### 18. 父组件向子组件传值/函数
 
 目的：实现发送数据后更新表单的功能（当子组件form向API发出post请求后收到response，后调用父组件函数更新table，只有发送一次请求），将父组件函数传递给子组件，通过子组件调用父组件函数改变父组件状态。
 
@@ -349,18 +349,18 @@ handleAction = this.Action.bind(this)
 3. 子组件触发条件，通过this.props.handleAction调用这个函数（传入参数是子组件状态，方法内数据为父组件状态）
 4. 父组件的状态得到更新
 
-#### 18. 更新数据：获取input的内容
+#### 19. 更新数据：获取input的内容
 
 - 获取：使用input框的3个值，在input中设置ref属性：ref = "date/value/amount"
 
 - 使用：在自定义方法中使用this.refs.date.value
 
 
-#### 19. 关于api发送请求的疑问
+#### 20. 关于api发送请求的疑问
 
 向api发送数据，为什么会返回这个发送过去的数据以及id呢？
 
-#### 20. 关于map
+#### 21. 关于map
 
 ```js
 
@@ -387,7 +387,7 @@ updateRecord(record,data){
 ```
 如果是不需要改的记录就把它和更新的data放在一起，item是每一项，index是该项的索引
 
-#### 20. 关于key
+#### 22. 关于key
 
 用于记录多个相同组件
 
@@ -400,7 +400,7 @@ updateRecord(record,data){
             />
 ```
 
-#### 21. 关于filter
+#### 23. 关于filter
 
 
 ```js
@@ -418,7 +418,7 @@ const newRecords = this.state.records.filter((item,index) =>index!==recordIndex)
     })
 ```
 
-#### 22. 动态设置组件样式
+#### 24. 动态设置组件样式
 
 传入参数bg-${type}改变样式
 
